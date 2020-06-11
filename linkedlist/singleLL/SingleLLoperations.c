@@ -1,10 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
+/*structure declaration*/
 struct node{
     int data;
     struct node *link;
 };
 struct node *root=NULL;
+/*All functions prototype*/
 void begin();
 void after();
 void end();
@@ -15,6 +17,7 @@ void deleteLast();
 void deleteSpecific();
 void reverse();
 int quit();
+/*Start of main function*/
 int main(){
     int t=1;
     while(t==1){
@@ -58,7 +61,7 @@ int main(){
         }
     }
 }
-
+/*defination of begin */
 void begin(){
     struct node *temp=(struct node*)malloc(sizeof(struct node));
     temp->link=NULL;
@@ -72,6 +75,7 @@ void begin(){
         root=temp;
     }
 }
+/*defination of after */
 void after(){
     printf("enter position");
     int pos,i=1;
@@ -101,6 +105,7 @@ void after(){
 
     }
 }
+/*defination of end */
 void end(){
     struct node *temp=(struct node*)malloc(sizeof(struct node));
     temp->link=NULL;
@@ -118,6 +123,7 @@ void end(){
     }
 
 }
+/*defination of display */
 void display(){
     if(root==NULL){
         printf("List is empty\n");
@@ -132,6 +138,7 @@ void display(){
         printf("Element is:%d\n",p->data);
     }
 }
+/*defination of length */
 int length(){
     struct node*p;
     int count=0;
@@ -148,6 +155,7 @@ int length(){
 
   return ++count;
 }
+/*defination of deleteFirst */
 void deleteFirst(){
     if(root==NULL){
         printf("LL is empty");
@@ -156,6 +164,7 @@ void deleteFirst(){
         root=root->link;
     }
 }
+/*defination of deleteLast */
 void deleteLast(){
     int i=1;
     if(root==NULL){
@@ -170,6 +179,7 @@ void deleteLast(){
         p->link=NULL;
     }
 }
+/*defination of deleteSpecific */
 void deleteSpecific(){
     int pos,i=1;
     printf("enter position:");
@@ -194,6 +204,7 @@ void deleteSpecific(){
         }
     }
 }
+/*defination of reverse */
 void reverse(){
     struct node *p,*q;
     p=q=root;
@@ -214,6 +225,7 @@ void reverse(){
 
 
 }
+/*defination of quit */
 int quit(){
    return 0;
 }
